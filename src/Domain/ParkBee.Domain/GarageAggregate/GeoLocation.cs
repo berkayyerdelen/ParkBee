@@ -13,7 +13,7 @@ namespace ParkBee.Domain.GarageAggregate
             Latitude = latitude;
             Longitude = longitude;
         }
-        public static GeoLocation CreateGeoLocation(int latitude, int longitude) => new GeoLocation(latitude, longitude);
+        public static GeoLocation CreateGeoLocation(int latitude, int longitude) => new (latitude, longitude);
 
         protected override IEnumerable<object> GetAtomicValues()
         {

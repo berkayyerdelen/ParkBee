@@ -19,7 +19,7 @@ namespace ParkBee.Domain.GarageAggregate
             PostalCode = postalCode;
         }
         public static Address CreateAddress(string country, string city, string streetAddress, string postalCode) 
-            => new Address(country, city, streetAddress, postalCode);
+            => new (country, city, streetAddress, postalCode);
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return Country;

@@ -18,7 +18,7 @@ namespace ParkBee.Domain.GarageAggregate
         }
 
         public static Door CreateDoor(DoorType doorType, string description, string IPAddress, bool isActive)
-            => new Door(doorType, description, IPAddress, isActive);
+            => new(doorType, description, IPAddress, isActive);
 
     }
 }

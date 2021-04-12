@@ -15,7 +15,7 @@ namespace ParkBee.Domain.GarageAggregate
             MiddleName = middleName;
             LastName = lastName;
         }
-        public static FullName CreateFullName(string firstName, string middleName, string lastName) => new FullName(firstName, middleName, lastName);
+        public static FullName CreateFullName(string firstName, string middleName, string lastName) => new (firstName, middleName, lastName);
 
         protected override IEnumerable<object> GetAtomicValues()
         {
