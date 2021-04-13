@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Domain.Core", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Infrastructure", "src\Infrastructure\ParkBee.Infrastructure\ParkBee.Infrastructure.csproj", "{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Application", "src\Application\ParkBee.Application\ParkBee.Application.csproj", "{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Api", "src\Presentation\ParkBee.Api\ParkBee.Api.csproj", "{E71B75F3-64F5-49F8-9B05-0A93F00D7384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71B75F3-64F5-49F8-9B05-0A93F00D7384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71B75F3-64F5-49F8-9B05-0A93F00D7384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71B75F3-64F5-49F8-9B05-0A93F00D7384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71B75F3-64F5-49F8-9B05-0A93F00D7384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +63,8 @@ Global
 		{07DE7830-F3A0-48BB-9AF9-6E59DCE6CDBD} = {9FAD6891-F400-406E-AD20-670B7E968666}
 		{B16F115F-D1B0-4B33-B85C-604AD721FE57} = {9FAD6891-F400-406E-AD20-670B7E968666}
 		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7} = {E6F7EF8B-8E98-4747-A84B-80F9806C4469}
+		{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41} = {56C9511C-9C7E-424A-8470-E5AAB41D33B4}
+		{E71B75F3-64F5-49F8-9B05-0A93F00D7384} = {D40492F1-0162-44CE-A801-51FC317B2610}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46CA3EEC-5C77-49CD-9050-CAB76E78CEDD}

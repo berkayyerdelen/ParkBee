@@ -9,7 +9,7 @@ namespace ParkBee.Domain.GarageAggregate
         public string FirstName { get; }
         public string MiddleName { get; }
         public string LastName { get; }
-        public FullName(string firstName, string middleName, string lastName)
+        protected FullName(string firstName, string middleName, string lastName)
         {
             FirstName = firstName;
             MiddleName = middleName;
