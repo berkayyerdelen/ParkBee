@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using ParkBee.Application.Interface;
 using ParkBee.Core;
 using ParkBee.Infrastructure;
+using ParkBee.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace ParkBee.Api
             services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(Configuration.GetValue<string>("ConnectionString")));
             services.RegisterInfrastructureServices();
             services.RegisterCoreServices();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParkBee.Api", Version = "v1" });
@@ -41,7 +43,7 @@ namespace ParkBee.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationContext context)
         {
             if (env.IsDevelopment())
             {

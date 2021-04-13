@@ -1,4 +1,5 @@
-﻿using ParkBee.Application.Interface;
+﻿using Microsoft.EntityFrameworkCore;
+using ParkBee.Application.Interface;
 using ParkBee.Domain.GarageAggregate;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,10 @@ namespace ParkBee.Infrastructure.Repositories
             await _context.SaveChangesAsync(CancellationToken.None);
         }
 
-        public async Task<GarageDetail> GetGaregeByIdAsync(Guid garageId)
-        => await _context.Set<GarageDetail>().FindAsync(garageId);
+        public async Task<GarageDetail> GetGaregeByIdAsync(Guid userId)
+        {
+            var garage =await _context.Set<Garage>().Include(x=>x.GarageDetail).Include(p=>p.GarageDetail.Doors).FirstOrDefaultAsync(x => x.CustomerId == userId);
+            return garage.GarageDetail;
+        }
     }
 }
