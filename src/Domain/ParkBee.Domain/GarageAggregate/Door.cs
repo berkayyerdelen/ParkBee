@@ -1,5 +1,5 @@
 ﻿using ParkBee.Domain.Core.Base;
-
+using System;
 
 namespace ParkBee.Domain.GarageAggregate
 {
@@ -9,12 +9,13 @@ namespace ParkBee.Domain.GarageAggregate
         public string Description { get; private set; }
         public string IPAddress { get; private set; }
         public bool IsActive { get; private set; }
-        public Door(DoorType doorType, string description, string IPAddress, bool ısActive)
+        public GarageDetail GarageDetail { get; set; }
+        public Door(DoorType doorType, string description, string IPAddress, bool isActive)
         {
             DoorType = doorType;
             Description = description;
             this.IPAddress = IPAddress;
-            IsActive = ısActive;
+            IsActive = isActive;
         }
 
         public static Door CreateDoor(DoorType doorType, string description, string IPAddress, bool isActive)
