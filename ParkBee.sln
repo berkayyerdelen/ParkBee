@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D40492F1-0162-44CE-A801-51FC317B2610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Domain", "src\Domain\ParkBee.Domain\ParkBee.Domain.csproj", "{07DE7830-F3A0-48BB-9AF9-6E59DCE6CDBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Domain", "src\Domain\ParkBee.Domain\ParkBee.Domain.csproj", "{07DE7830-F3A0-48BB-9AF9-6E59DCE6CDBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Domain.Core", "src\Domain\ParkBee.Domain.Core\ParkBee.Domain.Core.csproj", "{B16F115F-D1B0-4B33-B85C-604AD721FE57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Domain.Core", "src\Domain\ParkBee.Domain.Core\ParkBee.Domain.Core.csproj", "{B16F115F-D1B0-4B33-B85C-604AD721FE57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Infrastructure", "src\Infrastructure\ParkBee.Infrastructure\ParkBee.Infrastructure.csproj", "{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B16F115F-D1B0-4B33-B85C-604AD721FE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B16F115F-D1B0-4B33-B85C-604AD721FE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16F115F-D1B0-4B33-B85C-604AD721FE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{D40492F1-0162-44CE-A801-51FC317B2610} = {200B46EB-1D9A-407F-BE02-EB8028491F3F}
 		{07DE7830-F3A0-48BB-9AF9-6E59DCE6CDBD} = {9FAD6891-F400-406E-AD20-670B7E968666}
 		{B16F115F-D1B0-4B33-B85C-604AD721FE57} = {9FAD6891-F400-406E-AD20-670B7E968666}
+		{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7} = {E6F7EF8B-8E98-4747-A84B-80F9806C4469}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46CA3EEC-5C77-49CD-9050-CAB76E78CEDD}
