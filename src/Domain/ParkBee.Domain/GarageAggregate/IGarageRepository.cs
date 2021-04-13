@@ -9,6 +9,6 @@ namespace ParkBee.Domain.GarageAggregate
     public interface IGarageRepository
     {
         Task InsertGarageAsync(Garage garage);
-        Task<Garage> GetGaregeByIdAsync(Guid garageId);
+        Task<GarageDetail> GetGaregeByIdAsync(Guid garageId);
     }
 }

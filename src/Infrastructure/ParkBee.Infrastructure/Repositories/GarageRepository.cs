@@ -24,7 +24,7 @@ namespace ParkBee.Infrastructure.Repositories
             await _context.SaveChangesAsync(CancellationToken.None);
         }
 
-        public async Task<Garage> GetGaregeByIdAsync(Guid garageId)
-        => await _context.Set<Garage>().FindAsync(garageId);
+        public async Task<GarageDetail> GetGaregeByIdAsync(Guid garageId)
+        => await _context.Set<GarageDetail>().FindAsync(garageId);
     }
 }
