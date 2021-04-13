@@ -13,10 +13,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\ParkBee.Application\ParkBee.Application.csproj" />
+    <ProjectReference Include="..\..\Application\ParkBee.Application\ParkBee.Core.csproj" />
     <ProjectReference Include="..\..\Domain\ParkBee.Domain\ParkBee.Domain.csproj" />
   </ItemGroup>
 

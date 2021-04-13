@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ParkBee.Domain.GarageAggregate;
+using ParkBee.Domain.UserAggregate;
 
 namespace ParkBee.Infrastructure.Persistence.Configuration
 {

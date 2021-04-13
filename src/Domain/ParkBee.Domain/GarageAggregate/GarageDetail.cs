@@ -23,7 +23,7 @@ namespace ParkBee.Domain.GarageAggregate
             Address = address;
             Doors = doors;
         }
-        public GarageDetail CreateGarageDetail(string garageName, GeoLocation geoLocation, Address address, List<Door> doors)
+        public static GarageDetail CreateGarageDetail(string garageName, GeoLocation geoLocation, Address address, List<Door> doors)
                => new(garageName, geoLocation, address, doors);
     }
 }

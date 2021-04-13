@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Domain", "src\Domai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Domain.Core", "src\Domain\ParkBee.Domain.Core\ParkBee.Domain.Core.csproj", "{B16F115F-D1B0-4B33-B85C-604AD721FE57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Infrastructure", "src\Infrastructure\ParkBee.Infrastructure\ParkBee.Infrastructure.csproj", "{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Infrastructure", "src\Infrastructure\ParkBee.Infrastructure\ParkBee.Infrastructure.csproj", "{BBD9D7D2-30DE-4E6A-AF63-2398EB8A60E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Application", "src\Application\ParkBee.Application\ParkBee.Application.csproj", "{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Core", "src\Application\ParkBee.Application\ParkBee.Core.csproj", "{CF0ACCEE-B6F1-438A-8CA2-8BE671533A41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkBee.Api", "src\Presentation\ParkBee.Api\ParkBee.Api.csproj", "{E71B75F3-64F5-49F8-9B05-0A93F00D7384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkBee.Api", "src\Presentation\ParkBee.Api\ParkBee.Api.csproj", "{E71B75F3-64F5-49F8-9B05-0A93F00D7384}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

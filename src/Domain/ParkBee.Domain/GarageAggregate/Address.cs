@@ -15,7 +15,7 @@ namespace ParkBee.Domain.GarageAggregate
 
         }
         protected Address(string country, string city, string streetAddress, string postalCode)
-        {
+        {           
             Country = country;
             City = city;
             StreetAddress = streetAddress;

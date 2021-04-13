@@ -13,7 +13,7 @@ namespace ParkBee.Infrastructure.Persistence.Configuration
     {
         public void Configure(EntityTypeBuilder<Garage> builder)
         {
-            builder.ToTable("Garage", "parkbee");
+            builder.ToTable("Garages", "parkbee");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.GarageName);
             builder.Property(x => x.CountryCode);
