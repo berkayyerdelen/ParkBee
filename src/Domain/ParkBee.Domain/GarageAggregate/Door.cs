@@ -10,7 +10,11 @@ namespace ParkBee.Domain.GarageAggregate
         public string IPAddress { get; private set; }
         public bool IsActive { get; private set; }
         public GarageDetail GarageDetail { get; set; }
-        public Door(DoorType doorType, string description, string IPAddress, bool isActive)
+        private Door()
+        {
+
+        }
+        protected Door(DoorType doorType, string description, string IPAddress, bool isActive)
         {
             DoorType = doorType;
             Description = description;

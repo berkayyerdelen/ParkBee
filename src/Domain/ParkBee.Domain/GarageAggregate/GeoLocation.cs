@@ -8,7 +8,7 @@ namespace ParkBee.Domain.GarageAggregate
     {
         public int Latitude { get; }
         public int Longitude { get; }
-        public GeoLocation(int latitude, int longitude)
+        protected GeoLocation(int latitude, int longitude)
         {
             Latitude = latitude;
             Longitude = longitude;

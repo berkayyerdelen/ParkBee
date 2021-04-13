@@ -8,7 +8,11 @@ namespace ParkBee.Domain.GarageAggregate
 
         public FullName FullName { get; private set; }
         public UserCredentials UserCredentials { get;private set; }
-        public User(FullName fullName, UserCredentials userCredentials)
+        private User()
+        {
+
+        }
+        protected User(FullName fullName, UserCredentials userCredentials)
         {
             FullName = fullName;
             UserCredentials = userCredentials;

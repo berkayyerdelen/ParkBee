@@ -10,8 +10,11 @@ namespace ParkBee.Domain.GarageAggregate
         public string City { get; }
         public string StreetAddress { get; }
         public string PostalCode { get; }
+        private Address()
+        {
 
-        public Address(string country, string city, string streetAddress, string postalCode)
+        }
+        protected Address(string country, string city, string streetAddress, string postalCode)
         {
             Country = country;
             City = city;

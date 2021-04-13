@@ -16,6 +16,11 @@ namespace ParkBee.Infrastructure.Persistence.Configuration
                  cx.Property(k => k.MiddleName).HasColumnName("MiddleName");
                  cx.Property(k => k.LastName).HasColumnName("LastName");
              });
+            builder.OwnsOne(x => x.UserCredentials, cx =>
+            {
+                cx.Property(k => k.UserName).HasColumnName("UserName");
+                cx.Property(k => k.Password).HasColumnName("Password");
+            });
         }
     }
 }
