@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\ParkBee.Application\ParkBee.Application.csproj" />
+    <ProjectReference Include="..\..\Application\ParkBee.Application\ParkBee.Core.csproj" />
     <ProjectReference Include="..\..\Domain\ParkBee.Domain\ParkBee.Domain.csproj" />
   </ItemGroup>
 

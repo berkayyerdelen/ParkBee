@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ParkBee.Application.Interface;
 using ParkBee.Domain.GarageAggregate;
+using ParkBee.Domain.UserAggregate;
 using ParkBee.Infrastructure.Persistence.Configuration;
 using System;
 using System.Collections.Generic;

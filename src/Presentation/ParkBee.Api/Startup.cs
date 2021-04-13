@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ParkBee.Application.Interface;
+using ParkBee.Core;
 using ParkBee.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,8 @@ namespace ParkBee.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(x => x.UseSqlServer(Configuration.GetValue<string>("ConnectionString")));
-            services.AddScoped<IApplicationContext, ApplicationContext>();
+            services.RegisterInfrastructureServices();
+            services.RegisterCoreServices();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
