@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParkBee.Infrastructure;
 
 namespace ParkBee.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20210414071627_Add_Role_Column_To_User_Table")]
+    partial class Add_Role_Column_To_User_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -197,7 +199,7 @@ namespace ParkBee.Infrastructure.Migrations
                                 .HasForeignKey("UserId");
                         });
 
-                    b.OwnsOne("ParkBee.Domain.UserAggregate.Role", "Role", b1 =>
+                    b.OwnsOne("ParkBee.Domain.UserAggregate.Role", "Roles", b1 =>
                         {
                             b1.Property<Guid>("UserId")
                                 .HasColumnType("uniqueidentifier");
@@ -237,7 +239,7 @@ namespace ParkBee.Infrastructure.Migrations
 
                     b.Navigation("FullName");
 
-                    b.Navigation("Role");
+                    b.Navigation("Roles");
 
                     b.Navigation("UserCredentials");
                 });

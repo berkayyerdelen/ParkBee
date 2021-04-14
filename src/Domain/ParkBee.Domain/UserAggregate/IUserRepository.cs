@@ -10,5 +10,6 @@ namespace ParkBee.Domain.UserAggregate
     {
         Task InsertUserAsync(User user);
         Task<List<User>> GetUsersAsync();
+        Task<User> GetUserAsync(string userName, string password);
     }
 }

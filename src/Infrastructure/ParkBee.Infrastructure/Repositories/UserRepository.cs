@@ -19,6 +19,12 @@ namespace ParkBee.Infrastructure.Repositories
             _context = context;
         }
 
+        public async Task<User> GetUserAsync(string userName, string password)
+        {
+            return await _context.Set<User>()
+                .FirstOrDefaultAsync(x => x.UserCredentials.UserName == userName && x.UserCredentials.Password == password);
+        }
+
         public async Task<List<User>> GetUsersAsync()
         {
            return await _context.Set<User>().ToListAsync();

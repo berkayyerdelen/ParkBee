@@ -28,9 +28,9 @@ namespace ParkBee.Infrastructure.Context
                 if (!context.Set<User>().Any()) {
                     context.Set<User>().Add(
                    User.CreateCustomerWithId(JohnUserId, FullName.CreateFullName("John", null, "Doe"),
-                   UserCredentials.CreateUserCredentials("Johny", "Pa55w0rd")));
+                   UserCredentials.CreateUserCredentials("Johny", "Pa55w0rd"),Role.CreateRole("Admin")));
                     context.Set<User>().Add(User.CreateCustomerWithId(JaneUserId, FullName.CreateFullName("Jane", null, "Doe"),
-                        UserCredentials.CreateUserCredentials("Jane", "Password")));
+                        UserCredentials.CreateUserCredentials("Jane", "Password"),Role.CreateRole("Admin")));
                     context.Set<Garage>().Add(Garage.CreateGarage("Hank's Garage", "nl",
                          GarageDetail.CreateGarageDetail("Hank's Place", GeoLocation.CreateGeoLocation(50, 5),
                         Address.CreateAddress("Netherland", "Amsterdam", "Next st.", "1019"),

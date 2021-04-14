@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ParkBee.Core.Domain.Auth.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,16 @@ namespace ParkBee.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private IMediator _mediator;
+
+        public AuthController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+        [HttpPost]
+        public async Task<IActionResult> LoginAsync(LoginRequest request)
+        {
+            return Ok(await _mediator.Send(request));
+        }
     }
 }
