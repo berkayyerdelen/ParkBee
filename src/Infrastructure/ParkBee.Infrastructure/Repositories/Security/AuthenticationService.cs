@@ -20,10 +20,7 @@ namespace ParkBee.Infrastructure.Repositories.Security
             _config = config.Value;
         }
         public TokenResponseModel GenerateJwtSecurityToken(TokenRequestModel tokenRequestModel)
-        {
-         
-
-
+        {       
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_config.SecurityKey);
             var tokenDescriptor = new SecurityTokenDescriptor
