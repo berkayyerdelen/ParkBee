@@ -26,6 +26,11 @@ namespace ParkBee.Domain.UserAggregate
             Id = id;
             Role = role;
         }
+        public User UpdateUserRole(Role role)
+        {
+            Role = role;
+            return this;
+        }
         public User UpdateFullName(FullName fullName)
         {
             if (FullName is null)

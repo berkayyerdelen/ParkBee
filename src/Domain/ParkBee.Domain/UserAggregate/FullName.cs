@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace ParkBee.Domain.GarageAggregate
+namespace ParkBee.Domain.UserAggregate
 {
     public class FullName : ValueObject
     {
