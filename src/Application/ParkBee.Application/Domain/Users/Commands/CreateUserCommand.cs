@@ -28,7 +28,7 @@ namespace ParkBee.Core.Domain.Users.Commands
         {
             await _userRepository.InsertUserAsync(User.CreateCustomer(
                 FullName.CreateFullName(request.FirstName,request.MiddleName,request.LastName),
-                UserCredentials.CreateUserCredentials(request.UserName,request.Password)));
+                UserCredentials.CreateUserCredentials(request.UserName,request.Password),Role.CreateRole("Admin")));
             return Unit.Value;
         }
     }
