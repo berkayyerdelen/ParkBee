@@ -11,8 +11,8 @@ namespace ParkBee.UnitTests.DomainTests
 {
     public class GarageTest
     {
-        public Garage garage;
-        public Guid CustomerId;
+        private Garage garage;
+        private Guid CustomerId;
         public GarageTest()
         {
             CustomerId = Guid.NewGuid();

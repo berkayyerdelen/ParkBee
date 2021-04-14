@@ -11,7 +11,7 @@ namespace ParkBee.UnitTests.DomainTests
 {
     public class GarageDetailTest
     {
-        public GarageDetail garageDetail;
+        private GarageDetail garageDetail;
         public GarageDetailTest()
         {
             garageDetail = GarageDetail.CreateGarageDetail("Parkbee", GeoLocation.CreateGeoLocation(5, 30),
