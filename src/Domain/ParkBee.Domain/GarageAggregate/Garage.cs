@@ -11,11 +11,15 @@ namespace ParkBee.Domain.GarageAggregate
         public GarageDetail GarageDetail { get; private set; }
         public Garage SetGarageName (string garageName)
         {
+            if (string.IsNullOrEmpty(garageName))
+                throw new DomainException("Garage Name can not be null or empty");
             GarageName = garageName;
             return this;
         }
         public Garage SetCountryCode(string countryCode)
         {
+            if (string.IsNullOrEmpty(countryCode))
+                throw new DomainException("Country code can not be null or empty");
             CountryCode = countryCode; 
             return this;
         }
