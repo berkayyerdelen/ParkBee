@@ -17,14 +17,14 @@ namespace ParkBee.Infrastructure.Context
     {
         public static IHost MigrateDbContext(this IHost host)
         {
-            // Create a scope to get scoped services.
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                // get the service provider and db context.
                 var context = services.GetService<ApplicationContext>();
+
                 var JohnUserId = new Guid("9c90483c-3a44-47b2-a44c-ea62bf7f1558");
                 var JaneUserId = new Guid("f2f150be-2933-4ded-b725-8fc09a933a00");
+
                 if (!context.Set<User>().Any())
                 {
                     context.Set<User>().Add(

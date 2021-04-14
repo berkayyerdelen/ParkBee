@@ -26,10 +26,15 @@ namespace ParkBee.Domain.GarageAggregate
             Doors.Remove(door);
             return this;
         }
-        public GarageDetail UpdateDoorDetail(string IPAddress, Door door)
+        public GarageDetail UpdateDoorDetail(Door door)
         {
-            var existingDoor = Doors.FirstOrDefault(x => x.IPAddress == IPAddress);
+            var existingDoor = Doors.FirstOrDefault(x => x.IPAddress == door.IPAddress);
             existingDoor = door;
+            return this;
+        }
+        public GarageDetail AddDoor(Door door)
+        {
+            Doors.Add(door);
             return this;
         }
         public void SetGeoLocation(GeoLocation geoLocation)
