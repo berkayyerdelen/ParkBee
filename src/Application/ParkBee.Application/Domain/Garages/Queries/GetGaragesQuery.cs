@@ -29,7 +29,7 @@ namespace ParkBee.Core.Domain.Garages.Queries
 
         public async Task<GarageDetail> Handle(GetGaragesQuery request, CancellationToken cancellationToken)
         {
-            return await _garageRepository.GetGaregeByIdAsync(request.UserId);
+            return await _garageRepository.GetGarageByIdAsync(request.UserId);
         }
     }
 }

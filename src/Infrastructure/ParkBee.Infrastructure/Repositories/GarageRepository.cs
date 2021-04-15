@@ -25,10 +25,20 @@ namespace ParkBee.Infrastructure.Repositories
             await _context.SaveChangesAsync(CancellationToken.None);
         }
 
-        public async Task<GarageDetail> GetGaregeByIdAsync(Guid userId)
+        public async Task<GarageDetail> GetGarageByIdAsync(Guid userId)
         {
-            var garage =await _context.Set<Garage>().Include(x=>x.GarageDetail).Include(p=>p.GarageDetail.Doors).FirstOrDefaultAsync(x => x.CustomerId == userId);
+            var garage = await _context.Set<Garage>().Include(x => x.GarageDetail).Include(p => p.GarageDetail.Doors).FirstOrDefaultAsync(x => x.CustomerId == userId);
             return garage.GarageDetail;
+        }
+        public async Task<bool> UpdateDoorStatus(Door door)
+        {
+            return 1 == await _context.SaveChangesAsync(CancellationToken.None);
+        }
+
+        public async Task AddHistoricalDoorStatusLog(DoorsStatusHistory doorsStatusHistory)
+        {
+            await _context.Set<DoorsStatusHistory>().AddAsync(doorsStatusHistory);
+            await _context.SaveChangesAsync(CancellationToken.None);
         }
     }
 }
