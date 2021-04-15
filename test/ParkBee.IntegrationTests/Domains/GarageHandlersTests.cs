@@ -41,5 +41,18 @@ namespace ParkBee.IntegrationTests.Domains
             var result = await handler.Handle(command, CancellationToken.None);
             Assert.Equal(3, _context.Set<Garage>().Count());
         }
+        [Fact]
+        public async Task Should_Have_Update_Door_Status()
+        {
+            var command = new RefreshGarageStatusCommand()
+            {
+                IPAddress = "44971013-6e13-41ac-840d-177e05df8899",
+                UserId = new Guid("9c90483c-3a44-47b2-a44c-ea62bf7f1558"),
+                Status = true
+            };
+            var handler = new RefreshGarageStatusCommandHandler(garageRepository);
+            var result = await handler.Handle(command, CancellationToken.None);
+            Assert.True(_context.Set<Door>().FirstOrDefault(x => x.IPAddress == command.IPAddress).IsActive);
+        }
     }
 }

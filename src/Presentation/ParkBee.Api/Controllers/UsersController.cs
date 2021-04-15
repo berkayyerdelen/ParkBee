@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace ParkBee.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")]
     [ApiController]
     public class UsersController : ControllerBase
     {

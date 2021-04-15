@@ -1,6 +1,8 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ParkBee.Core.Domain.Garages.Commands;
 using ParkBee.Core.Domain.Garages.Queries;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,7 @@ namespace ParkBee.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class GaragesController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -23,6 +26,11 @@ namespace ParkBee.Api.Controllers
         public async Task<IActionResult> GetGarageDetailsAsync(Guid garageId)
         {
             return Ok(await _mediator.Send(new GetGaragesQuery(garageId)));
+        }
+        [HttpPost]
+        public async Task<IActionResult> RefreshDoorStatusAsync(RefreshGarageStatusCommand command)
+        {
+            return Ok(await _mediator.Send(command));
         }
     }
 }
