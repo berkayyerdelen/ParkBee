@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ParkBee.Api.Middlewares;
 using ParkBee.Application.Interface;
 using ParkBee.Core;
 using ParkBee.Infrastructure;
@@ -43,7 +44,7 @@ namespace ParkBee.Api
             });
             var issuer = Configuration.GetSection("JwtOptions:Issuer").Value;
             var secretKey = Configuration.GetSection("JwtOptions:SecurityKey").Value;
-           
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -83,26 +84,23 @@ namespace ParkBee.Api
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
                 });
-
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-      {
-        {
-          new OpenApiSecurityScheme
-          {
-            Reference = new OpenApiReference
-              {
-                Type = ReferenceType.SecurityScheme,
-                Id = "Bearer"
-              },
-              Scheme = "oauth2",
-              Name = "Bearer",
-              In = ParameterLocation.Header,
-
-            },
-            new List<string>()
-          }
-        });
+                 {
+                    {
+                        new OpenApiSecurityScheme
+                         {
+                        Reference = new OpenApiReference
+                         {
+                         Type = ReferenceType.SecurityScheme,
+                         Id = "Bearer"},
+                         Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,},
+                         new List<string>()
+                         } });
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -121,6 +119,7 @@ namespace ParkBee.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
