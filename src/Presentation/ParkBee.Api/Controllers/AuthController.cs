@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ParkBee.Core.Common.Dto;
 using ParkBee.Core.Domain.Auth.Queries;
 using System.Threading.Tasks;
 
@@ -18,6 +20,8 @@ namespace ParkBee.Api.Controllers
             _mediator = mediator;
         }
         [HttpPost]
+        [ProducesDefaultResponseType(typeof(TokenResponseModel))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> LoginAsync(LoginRequest request)
         {
             return Ok(await _mediator.Send(request));

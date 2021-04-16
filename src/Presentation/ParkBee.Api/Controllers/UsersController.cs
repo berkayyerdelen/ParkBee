@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParkBee.Core.Domain.Users.Commands;
 using ParkBee.Core.Domain.Users.Queries;
+using ParkBee.Domain.UserAggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,14 @@ namespace ParkBee.Api.Controllers
             _mediator = mediator;
         }
         [HttpPost("CreateUser")]
+        [ProducesDefaultResponseType(typeof(Unit))]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> CreateUserAsync(CreateUserCommand command)
             => Ok(await _mediator.Send(command));
        
         [HttpGet("GetUsers")]
+        [ProducesDefaultResponseType(typeof(List<User>))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetUsersAsync()
             => Ok(await _mediator.Send(new GetUsersQuery()));
 
