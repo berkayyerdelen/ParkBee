@@ -19,12 +19,12 @@ namespace ParkBee.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet("{garageId}")]
-        public async Task<IActionResult> GetGarageDetailsAsync(Guid garageId)
+        [HttpGet("{userId}")]
+        public async Task<IActionResult> GetGarageDetailsAsync(Guid userId)
         {
-            return Ok(await _mediator.Send(new GetGaragesQuery(garageId)));
+            return Ok(await _mediator.Send(new GetGaragesQuery(userId)));
         }
-        [HttpPost]
+        [HttpPost("RefreshDoorStatus")]
         public async Task<IActionResult> RefreshDoorStatusAsync(RefreshGarageStatusCommand command)
         {
             return Ok(await _mediator.Send(command));

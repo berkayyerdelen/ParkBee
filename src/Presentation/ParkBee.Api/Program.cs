@@ -8,7 +8,7 @@ namespace ParkBee.Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().MigrateDbContext().Run(); 
+            CreateHostBuilder(args).Build().MigrateDbContext().SeedDatabase().Run(); 
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

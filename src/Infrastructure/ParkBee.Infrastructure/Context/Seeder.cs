@@ -10,7 +10,7 @@ namespace ParkBee.Infrastructure.Context
 {
     public static class Seeder
     {
-        public static IHost MigrateDbContext(this IHost host)
+        public static IHost SeedDatabase(this IHost host)
         {
             using (var scope = host.Services.CreateScope())
             {
