@@ -4,8 +4,6 @@ using Newtonsoft.Json;
 using ParkBee.Core.Common.Exceptions;
 using ParkBee.Domain.Core.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 

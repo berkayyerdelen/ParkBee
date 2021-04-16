@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
-using ParkBee.Core.Common.DTO;
+using ParkBee.Core.Common.Dto;
 using ParkBee.Core.Domain.Auth.Queries;
 using ParkBee.Infrastructure;
 using ParkBee.Infrastructure.Repositories;

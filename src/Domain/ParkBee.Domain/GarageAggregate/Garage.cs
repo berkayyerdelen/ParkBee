@@ -1,7 +1,6 @@
 ﻿using ParkBee.Domain.Core.Base;
 using System;
 
-
 namespace ParkBee.Domain.GarageAggregate
 {
     public class Garage : Entity, IAggregateRoot

@@ -1,12 +1,8 @@
 ﻿using MediatR;
-using ParkBee.Core.Common.DTO;
+using ParkBee.Core.Common.Dto;
 using ParkBee.Core.Common.Exceptions;
 using ParkBee.Core.Interface;
 using ParkBee.Domain.UserAggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -31,7 +27,7 @@ namespace ParkBee.Core.Domain.Auth.Queries
             var user = await _userRepository.GetUserAsync(request.UserName, request.Password);
             if (user is null)
                 throw new BusinessException("User is null");
-            var tokenModel = _authenticationService.GenerateJwtSecurityToken(new() { UserName = user.UserCredentials.UserName, Role = user.Role.Roles });
+            var tokenModel = _authenticationService.GenerateSecurityToken(new() { UserName = user.UserCredentials.UserName, Role = user.Role.Roles });
             return tokenModel;
         }
     }

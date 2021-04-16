@@ -1,7 +1,5 @@
 ﻿using ParkBee.Domain.Core.Base;
 using System.Collections.Generic;
-
-
 namespace ParkBee.Domain.GarageAggregate
 {
     public class Address : ValueObject
@@ -15,14 +13,14 @@ namespace ParkBee.Domain.GarageAggregate
 
         }
         protected Address(string country, string city, string streetAddress, string postalCode)
-        {           
+        {
             Country = country;
             City = city;
             StreetAddress = streetAddress;
             PostalCode = postalCode;
         }
-        public static Address CreateAddress(string country, string city, string streetAddress, string postalCode) 
-            => new (country, city, streetAddress, postalCode);
+        public static Address CreateAddress(string country, string city, string streetAddress, string postalCode)
+            => new(country, city, streetAddress, postalCode);
         protected override IEnumerable<object> GetAtomicValues()
         {
             yield return Country;

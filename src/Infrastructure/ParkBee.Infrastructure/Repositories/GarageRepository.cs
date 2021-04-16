@@ -2,9 +2,6 @@
 using ParkBee.Application.Interface;
 using ParkBee.Domain.GarageAggregate;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -30,15 +27,20 @@ namespace ParkBee.Infrastructure.Repositories
             var garage = await _context.Set<Garage>().Include(x => x.GarageDetail).Include(p => p.GarageDetail.Doors).FirstOrDefaultAsync(x => x.CustomerId == userId);
             return garage.GarageDetail;
         }
-        public async Task<bool> UpdateDoorStatus(Door door)
+        public async Task<bool> UpdateDoorStatusAsync(Door door)
         {
             return 1 == await _context.SaveChangesAsync(CancellationToken.None);
         }
 
-        public async Task AddHistoricalDoorStatusLog(DoorsStatusHistory doorsStatusHistory)
+        public async Task AddHistoricalDoorStatusLogAsync(DoorsStatusHistory doorsStatusHistory)
         {
             await _context.Set<DoorsStatusHistory>().AddAsync(doorsStatusHistory);
             await _context.SaveChangesAsync(CancellationToken.None);
+        }
+
+        public async Task<Door> GetDoorByIPAddressAsync(string ipAddress)
+        {
+           return await _context.Set<Door>().FirstOrDefaultAsync(x => x.IPAddress == ipAddress);
         }
     }
 }

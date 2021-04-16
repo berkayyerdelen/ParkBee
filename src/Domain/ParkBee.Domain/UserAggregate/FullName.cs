@@ -1,7 +1,6 @@
 ﻿using ParkBee.Domain.Core.Base;
 using System.Collections.Generic;
 
-
 namespace ParkBee.Domain.UserAggregate
 {
     public class FullName : ValueObject

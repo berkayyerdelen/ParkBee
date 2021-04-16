@@ -1,14 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using ParkBee.Core.Common.DTO;
+using ParkBee.Core.Common.Dto;
 using ParkBee.Core.Interface;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ParkBee.Infrastructure.Repositories.Security
 {
@@ -19,7 +16,7 @@ namespace ParkBee.Infrastructure.Repositories.Security
         {
             _config = config.Value;
         }
-        public TokenResponseModel GenerateJwtSecurityToken(TokenRequestModel tokenRequestModel)
+        public TokenResponseModel GenerateSecurityToken(TokenRequestModel tokenRequestModel)
         {       
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_config.SecurityKey);
@@ -30,7 +27,7 @@ namespace ParkBee.Infrastructure.Repositories.Security
                     new Claim(ClaimTypes.Name, tokenRequestModel.UserName),
                     new Claim(ClaimTypes.Role, tokenRequestModel.Role),
                 }),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddDays(1),
                 Issuer =_config.Issuer,
                 Audience =_config.Issuer,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

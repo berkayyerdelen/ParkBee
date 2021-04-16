@@ -1,5 +1,4 @@
 ﻿using ParkBee.Domain.Core.Base;
-using ParkBee.Domain.GarageAggregate;
 using System;
 
 namespace ParkBee.Domain.UserAggregate
