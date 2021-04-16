@@ -23,7 +23,7 @@ namespace ParkBee.Infrastructure.Persistence.Configuration
                 cx.Property(k => k.PostalCode).HasColumnName("PostalCode");
                 cx.Property(k => k.StreetAddress).HasColumnName("StreetAddress");
             });
-            builder.HasMany(x => x.Doors).WithOne(x => x.GarageDetail);
+            builder.HasMany(x => x.Doors).WithOne();
         }
     }
 }
