@@ -25,7 +25,7 @@ namespace ParkBee.Infrastructure.Repositories
         public async Task<GarageDetail> GetGarageByIdAsync(Guid userId)
         {
             var garage = await _context.Set<Garage>().Include(x => x.GarageDetail).Include(p => p.GarageDetail.Doors).FirstOrDefaultAsync(x => x.CustomerId == userId);
-            return garage.GarageDetail;
+            return garage?.GarageDetail;
         }
         public async Task<bool> UpdateDoorStatusAsync(Door door)
         {
