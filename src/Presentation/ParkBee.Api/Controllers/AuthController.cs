@@ -19,7 +19,7 @@ namespace ParkBee.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost]
+        [HttpPost("Login")]
         [ProducesDefaultResponseType(typeof(TokenResponseModel))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> LoginAsync(LoginRequest request)
