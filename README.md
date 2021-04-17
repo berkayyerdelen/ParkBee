@@ -13,10 +13,10 @@ Follow these steps to get your development environment set up:
      dotnet build
      ```
 
-  4.  Getting Started
-    
+  4.  Getting Started     
+     ```
      docker-compose up
-    
+     ```
 
 ## Technologies
 * .NET 5
