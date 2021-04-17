@@ -20,8 +20,7 @@
 
 5. What future or current technology do you look forward to the most or want to use and why?
 - There are so many technologies that I want to work on it but the real question is do we rly need them in our production.
-I want to work on project what they really need. If microservice is needed? then fine but I need to understand why we need to implement it then any new technologies fine for me.
-
+Anyway I'd like to work on cloud based applications. Microservices, Relational and nonrelational databases.
 6. How would you find a production bug/performance issue? Have you done this before?
 I'll try to explain it step by step but before jump in I want say that I did it from developer perspective.
   Developer perspective for finding bug issue
