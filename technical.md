@@ -13,7 +13,7 @@ I'm using Layered pattern mostly and implementing onion architecture also using 
 - TDD is also increasing code quality, good documentation for new commers, reassurance when refactoring, encourages better design, oh yeah and redecue bugs:). at the end of day these methods say "hey your code is okey and I'll be same in the production env" so it reduce fear
 
 3. What version control system do you use or prefer?
-Git. Tbh I havent used SVN, TFS and others but I can cleary say that Git is easy to understand and Visual studio extension is quite reliable.
+- Git. Tbh I havent used SVN, TFS and others but I can cleary say that Git is easy to understand and Visual studio extension is quite reliable.
 
 4. What is your favorite language feature and can you give a short snippet on how you use it?
 - LINQ => Probably I wouldnt survive without it:) LINQ is not here for only object manipulation but also provide manipulation of sql, dataset xml and even entity. I also write java and obiviosly Stream Api can't even reach to LINQ level.
@@ -40,7 +40,7 @@ or another example would be like this. _context.set<TEntity>(); and then using p
 As a result We need to understand why we're using this tools.
 
 7. How would you improve the sample API (bug fixes, security, performance, etc.)?
-I would fallow the 6 again.
+- I would fallow the 6 again.
 
 
 
