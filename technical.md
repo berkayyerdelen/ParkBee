@@ -1,7 +1,7 @@
 ## Technical questions
 
 1. What architectures or patterns are you using currently or have worked on recently?
-I'm using Layered pattern mostly and implementing onion architecture also using CQRS, Mediator, DDD and TDD, CanExecute as a pattern.
+- I'm using Layered pattern mostly and implementing onion architecture also using CQRS, Mediator, DDD and TDD, CanExecute as a pattern.
 
 2. What do you think of them and would you want to implement it again?
 
@@ -38,7 +38,7 @@ so in sql profiler you will see this query like this "select * from TableName" o
 We could also write like this _context.set<TEntity>().where(x=>x.propertyname== "").ToList(); so query will be "select * from TableName t where  t.propertName ="""
 - Another example would be like this. _context.set<TEntity>(); and then using properties. but what if we only need few columns? _context.set<TEntity().Select(x=>x.propertyName);
 but actually you only need few columns so query would be like this in sql "select t.propertyX, t.properyY from TableName t;
-As a result We need to understand why we're using this tools.
+As a result We need to understand why we're using tools.
 
 7. How would you improve the sample API (bug fixes, security, performance, etc.)?
 - I would fallow the 6 again.
