@@ -36,7 +36,8 @@ Developer perspective for finding performance issue
 - Let say in EF you need to retrive some data from table. and u're writing query like this. _context.set<TEntity>().ToList().where(x=>x.propertyname== ""); 
 so in sql profiler you will see this query like this "select * from TableName" obiviosly its not ef mistake. 
 We could also write like this _context.set<TEntity>().where(x=>x.propertyname== "").ToList(); so query will be "select * from TableName t where  t.propertName ="""
-or another example would be like this. _context.set<TEntity>(); and then using properties. but what if we only need few columns? _context.set<TEntity>().Select(x=>x.propertyName);
+- Another example would be like this. _context.set<TEntity>(); and then using properties. but what if we only need few columns? _context.set<TEntity().Select(x=>x.propertyName);
+but actually you only need few columns so query would be like this in sql "select t.propertyX, t.properyY from TableName t;
 As a result We need to understand why we're using this tools.
 
 7. How would you improve the sample API (bug fixes, security, performance, etc.)?
