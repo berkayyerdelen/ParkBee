@@ -1,7 +1,5 @@
 # ParkBee Developer Assessment
 
-We'd like to thank you for taking the time to do our developer assessment. It consists of a [coding test](#coding-test) and some [technical questions](#technical-questions).
-
 ### Setup
 Follow these steps to get your development environment set up:
 
