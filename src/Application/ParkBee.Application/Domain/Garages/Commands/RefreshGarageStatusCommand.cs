@@ -25,10 +25,11 @@ namespace ParkBee.Core.Domain.Garages.Commands
         public async Task<Unit> Handle(RefreshGarageStatusCommand request, CancellationToken cancellationToken)
         {
             var garage = await _garegeRepository.GetGarageByIdAsync(request.UserId);
-            var door = garage.Doors.FirstOrDefault(x => x.IPAddress == request.IPAddress);
-            var doorCurrentStatus = door.IsActive;
+            var door = garage?.Doors?.FirstOrDefault(x => x.IPAddress == request.IPAddress);
+            var doorCurrentStatus = false;
             if (door is not null)
             {
+                doorCurrentStatus = door.IsActive;
                 door.UpdateStatus(request.Status);
                 await _garegeRepository.UpdateDoorStatusAsync(door);
             }
@@ -40,6 +41,7 @@ namespace ParkBee.Core.Domain.Garages.Commands
                     door = await _garegeRepository.GetDoorByIPAddressAsync(request.IPAddress);
                     if (door is not null)
                     {
+                        doorCurrentStatus = door.IsActive;
                         door.UpdateStatus(request.Status);
                         break;
                     }
