@@ -14,9 +14,10 @@ Follow these steps to get your development environment set up:
      ```
 
   4.  Getting Started     
-     ```
-     docker-compose up
-     ```
+     
+      ```
+      docker-compose up
+      ```
 
 ## Technologies
 * .NET 5
