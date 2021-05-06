@@ -28,4 +28,8 @@ Follow these steps to get your development environment set up:
 -  Authentication backed by JWT (role based)
 -	 Domain driven design implementation
 -	 Unit and Integration Tests
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=myPass123" -p 1433:1433 --name primeHotelDb -d mcr.microsoft.com/mssql/server:2017-latest
+
+
+
+- docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=myPass123" -p 1433:1433 --name primeHotelDb -d mcr.microsoft.com/mssql/server:2017-latest
+- dotnet ef --startup-project ../Parkbee.Api migrations add MigrationName -c ApplicationDbContext
